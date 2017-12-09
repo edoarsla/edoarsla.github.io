@@ -1,0 +1,110 @@
+<!--[if lt IE 7]>
+<html ng-app="configHub" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html ng-app="configHub"  class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html ng-app="configHub" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html ng-app="configHub" class="no-js"> <!--<![endif]-->
+
+<head>
+    <base href="/">
+    <title update-title></title>
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta charset="utf-8">
+    <meta name="description" content="Store, manage and distribute software configuration for a single application or a distributed system."/>
+    <meta name="keywords" content="pupped labs, system configuration, distributed systems,cloud computing,configuration management,cassandra,config files,config,conf,key value pairs,config properties,software config,"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png" />
+
+    <link href="/framework/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/framework/font-awesome-4.6.1/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/css/common.css?v=8"  rel="stylesheet">
+    <link href="/css/bootstrap-additions.min.css"  rel="stylesheet">
+</head>
+
+<body ng-controller="AppCtrl">
+    <div class="body-wrap">
+        <div ui-view class="index-padded-top" autoscroll="true"></div>
+        <div ng-include='"/nav/backToTop.html"'></div>
+        <div ng-include='"/nav/footer.html"'></div>
+    </div>
+</body>
+
+<script src="/framework/jquery/jquery.min.js"></script>
+<script src="/framework/jquery/jquery-ui.min.js"></script>
+<script src="/framework/angular-1.4.7/angular.min.js"></script>
+<script src="/framework/angular-1.4.7/angular-sanitize.min.js"></script>
+<script src="/framework/bootstrap/js/bootstrap.min.js"></script>
+<script src="/framework/angular-ui-router.min.js"></script>
+<script src="/framework/angulartics/dist/angulartics.min.js"></script>
+<script src="/framework/angulartics/dist/angulartics-ga.min.js"></script>
+
+
+<script src="/js/app.js?v=8"></script>
+<script src="/js/home.js?v=8"></script>
+<script src="/js/features.js?v=8"></script>
+<script src="/js/download.js?v=8"></script>
+
+<script src="//fast.wistia.com/embed/medias/zic26amoqi.jsonp" async></script>
+<script src="//fast.wistia.com/assets/external/E-v1.js" async></script>
+
+
+<!--[if lt IE 9]><script src="/framework/es5-shim.min.js"></script><![endif]-->
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-74906312-1', 'auto');
+</script>
+
+<script data-cfasync="false" type='text/javascript'>/*<![CDATA[*/window.olark||(function(c){var f=window,d=document,l=f.location.protocol=="https:"?"https:":"http:",z=c.name,r="load";var nt=function(){
+    f[z]=function(){
+        (a.s=a.s||[]).push(arguments)};var a=f[z]._={
+    },q=c.methods.length;while(q--){(function(n){f[z][n]=function(){
+        f[z]("call",n,arguments)}})(c.methods[q])}a.l=c.loader;a.i=nt;a.p={
+        0:+new Date};a.P=function(u){
+        a.p[u]=new Date-a.p[0]};function s(){
+        a.P(r);f[z](r)}f.addEventListener?f.addEventListener(r,s,false):f.attachEvent("on"+r,s);var ld=function(){function p(hd){
+        hd="head";return["<",hd,"></",hd,"><",i,' onl' + 'oad="var d=',g,";d.getElementsByTagName('head')[0].",j,"(d.",h,"('script')).",k,"='",l,"//",a.l,"'",'"',"></",i,">"].join("")}var i="body",m=d[i];if(!m){
+        return setTimeout(ld,100)}a.P(1);var j="appendChild",h="createElement",k="src",n=d[h]("div"),v=n[j](d[h](z)),b=d[h]("iframe"),g="document",e="domain",o;n.style.display="none";m.insertBefore(n,m.firstChild).id=z;b.frameBorder="0";b.id=z+"-loader";if(/MSIE[ ]+6/.test(navigator.userAgent)){
+        b.src="javascript:false"}b.allowTransparency="true";v[j](b);try{
+        b.contentWindow[g].open()}catch(w){
+        c[e]=d[e];o="javascript:var d="+g+".open();d.domain='"+d.domain+"';";b[k]=o+"void(0);"}try{
+        var t=b.contentWindow[g];t.write(p());t.close()}catch(x){
+        b[k]=o+'d.write("'+p().replace(/"/g,String.fromCharCode(92)+'"')+'");d.close();'}a.P(2)};ld()};nt()})({
+    loader: "static.olark.com/jsclient/loader0.js",name:"olark",methods:["configure","extend","declare","identify"]});
+olark.identify('1301-489-10-3740');
+</script><noscript><a href="https://www.olark.com/site/1301-489-10-3740/contact" title="Contact us" target="_blank">Questions? Feedback?</a> powered by <a href="http://www.olark.com?welcome" title="Olark live chat software">Olark live chat software</a></noscript>
+
+
+<script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+        n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+        document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+    fbq('init', '350506562071775');
+    fbq('track', 'PageView');
+</script>
+
+
+</html>

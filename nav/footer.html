@@ -1,0 +1,86 @@
+
+<footer class="footer">
+
+    <section class="sub-promo section">
+        <div class="container">
+            <div class="row sun-links">
+
+                    <span class="padded-right20">
+                        <span class="wistia_embed wistia_async_zic26amoqi popover=true popoverContent=link"
+                              style="display:inline"><a href="#">
+                        <i class="fa fa-play-circle" aria-hidden="true"></i> Explainer video
+                        </a></span>
+                    </span>
+
+                    <span class="padded-left20">
+                        <a analytics-on="click" analytics-event="Contact"
+                           ui-sref="scheduleDemo">
+                            <i class="fa fa-calendar-plus-o" aria-hidden="true"></i> Schedule a demo
+                        </a>
+                    </span>
+
+            </div>
+        </div>
+    </section>
+
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="footer-col col-sm-4">
+                <div class="footer-col-inner">
+                    <h3 class="col-title">About</h3>
+                    <ul class="footer-menu list-unstyled">
+                        <li><a ui-sref="contact">Contact</a></li>
+                        <li><a ui-sref="privacy">Privacy</a></li>
+                        <li><a ui-sref="terms">Terms of Services</a></li>
+                        <li><a ui-sref="eula">End-User License Agreement</a></li>
+                    </ul>
+                    <div class="margin-top50 hidden-xs">
+                        <small class="copyright">&copy; 2017 ConfigHub, LLC</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-col col-sm-4">
+                <div class="footer-col-inner">
+                    <h3 class="col-title">Product</h3>
+                    <ul class="footer-menu list-unstyled">
+                        <li><a ui-sref="whatIs">How it works?</a></li>
+                        <li><a ui-sref="features">Features</a></li>
+                        <li><a ui-sref="services">Services</a></li>
+                        <li><a ui-sref="download">Downloads</a></li>
+                        <li><a href="http://docs.confighub.com" target="_docs">Documentation</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-col col-sm-4">
+                <div class="footer-col-inner">
+                    <p class="maillist-subscribe">
+                        Receive new release notifications, patches, and relevant updates.
+                    </p>
+                </div>
+                <div class="input-group input-group-sm" style="max-width: 300px;">
+                    <input type="text" ng-model="email" class="form-control" placeholder="Email" aria-describedby="sizing-addon3">
+                    <div class="input-group-btn">
+                        <a ng-click="mailingListSubscribe(email)"
+                           ng-disabled="postingMessage || simpleContactForm.$invalid"
+                           class="btn btn-success">
+                            <span ng-if="postingSubscription">Sending...</span>
+                            <span ng-if="!postingSubscription">Sign Up</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="margin-top50 hidden-sm hidden-md hidden-lg">
+            <small class="copyright">&copy; 2017 ConfigHub, LLC</small>
+        </div>
+
+
+    </div>
+</footer>

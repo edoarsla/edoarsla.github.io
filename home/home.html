@@ -1,0 +1,434 @@
+<div ng-controller="HomeCtrl">
+    <div class="landing top-header-wrap">
+        <div ng-include='"/nav/nav.html"' id="top"></div>
+
+        <section class="promo-section section">
+
+            <div class="container text-center">
+                <h1 class="headline">
+                    The new way to manage software configuration
+                </h1>
+                <p class="headline">
+
+                    From mobile apps to microservices, from small startups to big enterprises,
+                    ConfigHub helps teams manage, secure and deliver configuration across the entire stack.
+
+                </p>
+
+                <div class="headline-btns">
+
+
+                    <a class="btn btn-lg btn-primary"
+                       analytics-on="click" analytics-event="Download" ui-sref="download">
+                        <i class="fa fa-download"></i>
+                        Download & Install
+                    </a>
+
+                    <span class="wistia_embed wistia_async_zic26amoqi popover=true popoverContent=link"
+                          style="display:inline">
+                        <a class="btn btn-lg btn-default" href="#">
+                            <i class="fa fa-play-circle"></i>
+                            Play Video
+                        </a>
+                    </span>
+
+                </div>
+
+
+                <div>
+                    <a analytics-on="click" analytics-event="ScheduleDemo" ui-sref="scheduleDemo">
+                        Request a Demo
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+
+
+    <section class="section">
+        <div class="container">
+
+            <div class="text-center">
+                <h1>
+                    A big leap forward in software configuration
+                </h1>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 margin-top30">
+                    <div class="platform-img text-center">
+                        <img src="/images/home/apps.svg" class="apps">
+                    </div>
+
+                    <h4 class="text-center margin-bottom20">Control all config from one place</h4>
+                    <div>
+                        <p>
+                            When config is bundled with code, changes are almost always made by developers, and the
+                            same modification needs to be applied in multiple locations.
+                        </p>
+
+                        <p>
+                            Having all config centralized across – everything, makes it easier to audit and
+                            control from one place. One thing to change, one thing to propagate, one thing to
+                            integrate to.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="col-md-6 margin-top30">
+                    <div class="platform-img text-center">
+                        <img src="/images/home/security.svg" class="security">
+                    </div>
+
+                    <h4 class="text-center margin-bottom20">Never expose secure information again</h4>
+
+                    <div>
+                        <p>
+                            In face of complexity, security is often disregarded.  Passwords and other sensitive
+                            information always find their way into config files.
+                        </p>
+
+                        <p>
+                            Applications written with ConfigHub in mind are much more secure. There is no on-disk
+                            data to exploit, find, exfiltrate. Everything is protected and in-memory.
+                            This makes it easy to pass audits.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="row">
+
+                <div class="col-md-6 margin-top30">
+                    <div class="platform-img text-center">
+                        <img src="/images/home/duplicates.svg" class="files">
+                    </div>
+
+                    <h4 class="text-center margin-bottom20">Eliminate config duplication and errors</h4>
+
+                    <div>
+                        <p>
+                            Many config attributes are the same between applications or across environments.
+                            Due to the inflexibility of configuration files they are often duplicated, creating a
+                            fertile ground for errors and a time drain for changes.
+                        </p>
+
+                        <p>
+                            ConfigHub eliminates file and key-value duplication entirely through the use of context -
+                            and zero duplication means fewer errors and lots of time saved.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 margin-top30">
+                    <div class="platform-img text-center">
+                        <img src="/images/home/independence3.svg" class="files">
+                    </div>
+
+                    <h4 class="text-center margin-bottom20">Dynamic modeling for any system topology</h4>
+
+                    <div>
+                        <p>
+                            The ability to dynamically define the context of each configuration on a per-repository
+                            basis greatly simplifies configuration management and allows a ton of flexibility with
+                            configuration overrides.
+                        </p>
+
+                        <p>
+                            ConfigHub has developed first-class support for dynamic configuration contexts,
+                            divorcing application instances from their requisite configuration data, and thus leads the
+                            way to generating a host-agnostic system topology.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+    <section class="section no-padding-top no-padding-bottom" smoothy>
+        <div class="container">
+
+            <div class="quote-wrapper">
+                <div class="left-nav"><i ng-click="nextQ()" class="fa fa-chevron-circle-left"></i></div>
+                <div class="start-quote">
+                    <p class="signature">
+                        {{ quote.name }}<br>
+                        {{ quote.title }}, <strong>{{ quote.company }}</strong>
+                    </p>
+
+                    <p class="quote">{{ quote.content }}</p>
+                </div>
+                <div class="right-nav"><i ng-click="prevQ()" class="fa fa-chevron-circle-right"></i></div>
+
+                <div class="text-center margin-top50 quote-nav hidden-md hidden-lg">
+                    <ul class="list-inline">
+                        <li><i ng-click="setIndex(0)" class="fa" ng-class="{'fa-circle': displayIndex == 0, 'fa-circle-o': displayIndex != 0 }"></i></li>
+                        <li><i ng-click="setIndex(1)" class="fa" ng-class="{'fa-circle': displayIndex == 1, 'fa-circle-o': displayIndex != 1 }"></i></li>
+                        <li><i ng-click="setIndex(2)" class="fa" ng-class="{'fa-circle': displayIndex == 2, 'fa-circle-o': displayIndex != 2 }"></i></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section when">
+        <div class="container">
+
+            <div class="text-center">
+                <h1>
+                    ConfigHub is great when...
+                </h1>
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-4 margin-top30">
+                    <div class="platform-img text-center">
+                        <img src="/images/home/distrib.svg">
+                    </div>
+
+                    <h5 class="text-center title margin-bottom20">You manage a distributed system</h5>
+
+                    <div>
+                        <p class="text-center">
+                            ConfigHub will have the biggest impact on enterprises managing cloud/hybrid
+                            distributed systems.  In these environments, teams manage many applications and instances.
+                            Removal of config dependencies greatly simplifies its management.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-4 margin-top30">
+                    <div class="platform-img text-center">
+                        <img src="/images/home/monitoring.svg">
+                    </div>
+
+                    <h5 class="text-center title margin-bottom20">You are concerned about security</h5>
+
+                    <div>
+                        <p class="text-center">
+                            Security flaws on application level are most common, and security is only as strong
+                            as its weakest link.  ConfigHub enables a security layer that does not burden
+                            the application code.   End-points need not be aware how the data is hidden.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="col-md-4 margin-top30">
+                    <div class="platform-img text-center">
+                        <img src="/images/home/complex.svg">
+                    </div>
+
+                    <h5 class="text-center title margin-bottom20">Config is increasingly complex</h5>
+
+                    <div>
+                        <p class="text-center">
+                            The sheer volume of applications reliant on multi environment/instance configuration,
+                            combined with infrastructure dynamism leads to unavoidable errors.  ConfigHub
+                            removes these complexities entirely, and allows for infrastructure config feedback.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="row">
+                <div class="col-md-4 margin-top30">
+                    <div class="platform-img text-center">
+                        <img src="/images/home/learning.svg">
+                    </div>
+
+                    <h5 class="text-center title margin-bottom20">You don't want to learn another tool</h5>
+
+                    <div>
+                        <p class="text-center">
+                            ConfigHub is designed for low learning curve by using familiar concepts - repository,
+                            key/value pairs and config files.  Context, a new concept to some, can be mastered
+                            within 5-10 minutes by any DevOps team member.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4 margin-top30">
+                    <div class="platform-img text-center">
+                        <img src="/images/home/shapes.svg">
+                    </div>
+
+                    <h5 class="text-center title margin-bottom20">You want platform/language independence</h5>
+
+                    <div>
+                        <p class="text-center">
+                            ConfigHub is a polyglot with central control.  So, no matter the shape, size, or form,
+                            your software always integrates the same way, on any platform, in any language.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-4 margin-top30">
+                    <div class="platform-img text-center">
+                        <img src="/images/home/collaboration.svg">
+                    </div>
+
+                    <h5 class="text-center title margin-bottom20">You want all hands on deck</h5>
+
+                    <div>
+                        <p class="text-center">
+                            All DevOps can manage their slice of configuration.
+                            With access controls, security groups and token-based config push/pull, you can safely
+                            scope access for each team.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+    <section class="section getting-started no-padding-top">
+        <div class="container sectioned">
+
+            <div class="text-center">
+                <h1>Getting started is easy</h1>
+            </div>
+
+            <div class="content">
+                <div class="row">
+                    <div class="col-md-offset-3 col-md-6">
+                        <h5 class="title step1">1. Download and Install</h5>
+
+                        <p>
+                            ConfigHub platform is FREE. It runs and connects to you database locally, within your
+                            enterprise and behind your firewalls.
+                        </p>
+                        <p>Setup usually takes less then 5 minutes.</p>
+
+                        <p>
+                            Go to <a ui-sref="download">downloads</a> or take a look at
+                            <a href="http://docs.confighub.com">installation instructions</a>.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-offset-3 col-md-6">
+                        <h5 class="title step2">2. Create a Repository</h5>
+
+                        <p>
+                            Create an account and a repository to get started.  And that's it.
+                            Start adding properties, files, security groups and all other bells and whistles.
+                        </p>
+
+                        <p>
+                            Read an introduction about <a ui-sref="whatIs">what is context</a>,
+                            or dive into the mechanics of
+                            <a href="http://docs.confighub.com/en/latest/pages/primer.html" target="_docs">how context works</a>.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-offset-3 col-md-6">
+                        <h5 class="title step3">3. Hook it up to your code</h5>
+
+                        <p>
+                            Choose an SDK or call our RESTful JSON API to pull and/or push configuration from your code.
+                            Integrate with infrastructure management, continuous integration, or anything else that needs
+                            configuration.
+                        </p>
+
+                        <p>
+                            Look at <a ui-sref="download">APIs and 3rd party modules</a>, or read about the RESTful API
+                            <a href="http://docs.confighub.com/en/latest/index.html" target="_docs">Schema and API</a>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="section pre-footer no-padding">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-3">
+                    <h3 class="margin-bottom30">Release History</h3>
+
+                    <div class="margin-bottom10 release"
+                         ng-repeat="release in releases | orderBy: release.published_at | limitTo: 5">
+                        <div class="date">
+                            {{ getDate(release.published_at) }}
+                        </div>
+                        <div>
+                            <a href="{{ release.html_url }}">{{ release.name }}</a>
+                            <span ng-if="release.prerelease" class="pre-release mono">Beta</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <h3>Read More</h3>
+
+                    <ul class="margin-top30 padded-left15">
+                        <li><a ui-sref="whatIs">How it works?</a></li>
+                        <li><a ui-sref="features({'#': 'context'})" href="/features#context">Context Properties</a></li>
+                        <li><a ui-sref="features({'#': 'files'})" href="/features#files">Context Files</a></li>
+                        <li><a ui-sref="features({'#': 'security'})" href="/features#security">Security</a></li>
+                        <li><a ui-sref="features({'#': 'revs'})" href="/features#revs">Revisions</a></li>
+                        <li><a ui-sref="features({'#': 'teams'})" href="/features#teams">Teams / Access Controls</a></li>
+                        <li><a ui-sref="features({'#': 'vtd'})" href="/features#vtd">Type-Checked Values</a></li>
+                        <li><a ui-sref="features({'#': 'tags'})" href="/features#tags">Tags / Versions</a></li>
+                        <li><a ui-sref="features({'#': 'compare'})" href="/features#compare">Context / Time Comparison</a></li>
+                        <li><a ui-sref="features({'#': 'orgs'})" href="/features#orgs">Organizations</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-6">
+                    <h3>Videos</h3>
+
+                    <div class="margin-top30">
+
+                        <div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;">
+                            <div class="wistia_responsive_wrapper"
+                                 style="height:100%;left:0;position:absolute;top:0;width:100%;"><span
+                                    class="wistia_embed wistia_async_zic26amoqi popover=true popoverAnimateThumbnail=true videoFoam=true"
+                                    style="display:inline-block;height:100%;width:100%">&nbsp;</span></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</div>

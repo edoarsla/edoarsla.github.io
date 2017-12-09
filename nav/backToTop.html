@@ -1,0 +1,42 @@
+<script>
+    $(window).scroll(function() {
+        if ($(this).scrollTop() >= 50) {
+            $('#return-to-top').fadeIn(200);
+        } else {
+            $('#return-to-top').fadeOut(200);
+        }
+    });
+
+    $(document).ready(function()
+    {
+        $('#return-to-top').click(function() {
+            $('body,html').animate({scrollTop: 0}, 500);
+        });
+    });
+</script>
+
+<a href="#" id="return-to-top">
+    <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x" style="color: #efefef;"></i>
+        <i class="fa fa-angle-double-up fa-stack-1x"></i>
+    </span>
+
+</a>
+
+<style>
+    #return-to-top {
+        position: fixed;
+        bottom: 70px;
+        right: 20px;
+        width: 36px;
+        height: 36px;
+        text-decoration: none;
+        display: none;
+        z-index: 10;
+    }
+
+    #return-to-top i {
+        color: #2456ad;
+        margin: 0;
+    }
+</style>

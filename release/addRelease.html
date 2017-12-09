@@ -1,0 +1,89 @@
+<div class="container padded-top40" ng-controller="ReleaseController">
+
+    <h2 class="title download padded-bottom">Register ConfigHub Release</h2>
+
+    <div>
+
+        <div class="form-group">
+            <input type="text"
+                   placeholder="version"
+                   tabindex="1"
+                   class="form-control"
+                   ng-model="version"
+                   required>
+        </div>
+
+        <div class="form-group">
+            <input type="text"
+                   placeholder="Release Type"
+                   tabindex="2"
+                   class="form-control"
+                   ng-model="releaseType"
+                   required>
+        </div>
+
+        <div class="form-group">
+            <input type="text"
+                   placeholder="Release Format"
+                   tabindex="3"
+                   class="form-control"
+                   ng-model="releaseFormat"
+                   required>
+        </div>
+
+
+        <div class="form-group">
+            <textarea ng-model="releaseNote"
+                      placeholder="Release Notes"
+                      tabindex="4"
+                      style="white-space: pre-wrap; "
+                      class="msd-elastic form-control input-lg"></textarea>
+        </div>
+
+        <div class="form-group">
+            <input type="text"
+                   placeholder="Download Url"
+                   tabindex="5"
+                   class="form-control"
+                   ng-model="downloadUrl"
+                   required>
+        </div>
+
+        <div class="form-group">
+            <input type="text"
+                   placeholder="GitHub Url"
+                   tabindex="6"
+                   class="form-control"
+                   ng-model="gitLink"
+                   required>
+        </div>
+
+        <div class="form-group">
+            <input type="text"
+                   placeholder="Language"
+                   tabindex="7"
+                   class="form-control"
+                   ng-model="language"
+                   required>
+        </div>
+
+        <div class="form-group">
+            <textarea ng-model="dbUpgrade"
+                      placeholder="DB Upgrade"
+                      tabindex="8"
+                      style="white-space: pre-wrap; "
+                      class="msd-elastic form-control input-lg"></textarea>
+        </div>
+
+
+
+        <div class="margin-top50">
+            <button ng-click="addRelease()"
+                    class="btn btn-success btn-lg">
+                Register release
+            </button>
+        </div>
+
+    </div>
+
+</div>

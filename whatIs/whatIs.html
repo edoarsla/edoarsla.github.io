@@ -1,0 +1,270 @@
+<div class="whatis" ng-controller="FeaturesCtrl">
+
+    <div class="top-header-wrap">
+        <div ng-include='"/nav/nav.html"' id="top"></div>
+
+        <section class="features-page heading-section section section-on-bg">
+            <div class="container heading-content">
+                <h2 class="headline">What is ConfigHub?</h2>
+            </div>
+        </section>
+
+        <div class="page-nav-space-holder hidden-xs">
+            <div id="page-nav-wrapper" class="page-nav-wrapper text-center">
+                <div class="container">
+                    <ul id="page-nav" class="page-nav nav list-inline">
+                        <li><a class="scrollto" href="#overview">Overview</a></li>
+                        <li><a class="scrollto"  href="#context">What is context</a></li>
+                        <li><a class="scrollto"  href="#configPULL">Config PULL</a></li>
+                        <li><a class="scrollto"  href="#setup">Setup & fault-tolerance</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <section id="overview" class="margin-top80 margin-bottom80">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-offset-2 col-lg-8">
+                    <h2>Overview</h2>
+
+                    <p>
+                        ConfigHub is an Application Control Platform (ACP).
+                        It is capable of centralizing configuration for the entire development stack,
+                        via private, secure, versioned configuration repositories.
+                        In contrast to infrastructure-centric tools (i.e. Chef, Puppet, Salt, or DIY)
+                        ConfigHub is unique because our focus is on managing large and diverse configuration sets for all
+                        code developed and maintained by the enterprise.
+                    </p>
+
+                    <p>
+                        The unique approach of managing configuration via context definitions,
+                        allows abstraction of each application segment in a way that completely
+                        eliminates all configuration duplication and thus enables simple,
+                        safe and fast configuration management.
+                    </p>
+
+                    <p>
+                        ConfigHub platform is free, it is
+                        <a ui-sref="download">downloaded</a> and installed locally.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="context" class="margin-top80 margin-bottom80">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-offset-2 col-lg-8">
+                    <h2>What is context?</h2>
+
+                    <p>
+                        At the heart of ConfigHub is context.  It eliminates configuration duplication, greatly
+                        simplifies configuration in large systems, and lets
+                        you define your application space in a way not limited by any pre-determined conditions.
+                    </p>
+
+                    <p>
+                        The traditional configuration property is defined as a key-value pair:
+                        <pre>key: value</pre>
+
+                        The limitation of this definition is that it does nothing to
+                        describe who should know about this property, and therefore it will get duplicated for each
+                        consumer (application/instance).
+                    </p>
+
+
+                    <h4>Context properties and files</h4>
+                    <p>
+                        To overcome this limitation, we expanded the definition of the property to add context to the value.
+                        A context property looks like this:
+                        <pre>key: { context: value }</pre>
+
+                        Now, context describes a subset of applications that should know about this property.
+                    </p>
+
+
+                    <p>
+                        Furthermore, a key may have multiple values because the context for each value has to be unique
+                        within the key.  And the same logic applies to files.  Currently a file
+                        name has to be unique for a specific path.  However, with addition of context,
+                        multiple files with the same name can exist in the same path.
+                    </p>
+
+                    <div class="row">
+                        <div class="col-sm-6">
+<pre>
+key: {
+    context(1): value,
+    context(2): value,
+    ...
+    context(n): value
+}</pre>
+
+                        </div>
+                        <div class="col-sm-6">
+<pre>
+path/filename: {
+    context(1): file-content,
+    context(2): file-content,
+    ...
+    context(n): file-content
+}</pre>
+
+                        </div>
+
+                    </div>
+
+                    </p>
+
+
+
+                    <h4>Repository context</h4>
+                    <p>
+                        A repository, when created, defines a context that will be used by context properties and files.
+                        Repository context is defined to best describe your application space.  It may be as simple as
+                        <pre>Environment > Application</pre> or as "wide scoped" as you need it to be
+                        - i.e. <pre>Company > System > Platform > Environment > Application > Instance</pre>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section id="configPULL" class="margin-top80 margin-bottom80 gray-sub">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-offset-2 col-lg-8">
+                    <h2>How applications receive configuration</h2>
+
+                    <p>
+                        Applications receive configuration via PULL request from ConfigHub platform just by specifying
+                        their running context.  Application's context has to be fully-specified, meaning, each element
+                        of the context has to be specified.  With fully specified context, only a single, most specific
+                        context property value and context file is returned.
+                    </p>
+
+                    <p>
+                        ConfigHub platform uses RESTful Json API for both configuration PUSH and PULL.
+                        There are also several language specific APIs available on the
+                        <a ui-sref="download">download</a> page.
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section id="setup" class="margin-top80 margin-bottom80">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-offset-2 col-lg-8">
+
+                    <div class="row">
+                        <div class="col-md-7">
+                            <h2>Setup and fault-tolerance</h2>
+
+                            <p>
+                                In basic setup, ConfigHub is running either as a Docker container or
+                                on metal/cloud installation.  It requires connection to two databases.
+                                The "Main" database is used to store all repository and user data, and it is recommended
+                                for this database to have a replica.  The second database is an archive of all
+                                API request, and replication is optional (depending on how relevant this information is to you.)
+                            </p>
+
+                            <p>
+                                In this setup, applications will use either a language specific API, or a RESTful JSON
+                                API to pull configuration directly from the ConfigHub app server.
+                            </p>
+                        </div>
+
+                        <div class="col-md-4 col-md-offset-1">
+                            <img src="/images/how/platform.svg"
+                                 class="img-responsive">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="margin-top80 margin-bottom80">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-offset-2 col-lg-8">
+
+                    <div class="row">
+                        <div class="col-md-6 col-lg-7 hidden-sm hidden-xs">
+                            <img src="/images/how/failover.svg" class="img-responsive" style="margin: 40px auto 0;">
+                        </div>
+
+                        <div class="col-md-5 col-lg-4 col-md-offset-1 col-lg-offset-1">
+                            <h4>DNS managed failover setup</h4>
+                            <p>
+                                Having a slave database attached to a hot-standby ConfigHub instance
+                                allows for a fast failover with minimal downtime.  With an update to the
+                                DNS record and a switch of the database from Slave to Master setup,
+                                full operational state is recovered.
+                            </p>
+                        </div>
+
+                        <div class="col-xs-12 hidden-md hidden-lg">
+                            <img src="/images/how/failover.svg" class="img-responsive" style="margin: 40px auto 0;">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+        <section class="margin-top80 margin-bottom80">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-offset-2 col-lg-8">
+
+                        <div class="row">
+                            <div class="col-md-5 col-lg-4">
+                                <h4>Config caching via proxy agent</h4>
+                                <p>
+                                    Local cache agent serves as a proxy to ConfigHub.  Application request configuration
+                                    locally from the agent, which will then fetch configuration from ConfigHub service and
+                                    store it locally as last-know-configuration for each requested context.
+
+                                </p>
+
+                                <p>
+                                    If, for whatever reason, configuration cannot be pulled from ConfigHub, last known
+                                    configuration can be retrieved from the local agent.  Since all per context locally
+                                    cached configuration is kept as files, they can be modified manually if need be.
+                                </p>
+                            </div>
+                            <div class="col-md-6 col-md-offset-1 col-lg-7 col-lg-offset-1">
+                                <img src="/images/how/cache.svg" class="img-responsive" style="margin: 40px auto 0;">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+
+
+</div>

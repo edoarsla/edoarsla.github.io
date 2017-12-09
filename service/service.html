@@ -1,0 +1,107 @@
+<div class="top-header-wrap">
+    <div ng-include='"/nav/nav.html"' id="top"></div>
+
+    <section class="features-page heading-section section section-on-bg">
+        <div class="container heading-content">
+            <h2 class="headline">ConfigHub Professional Services</h2>
+        </div>
+    </section>
+</div>
+
+<section class="overview-section section" ng-controller="ServiceController">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-7">
+                <h1>Consulting Services</h1>
+
+                <p>
+                    ConfigHub has broad experience when it comes to software configuration needs.
+                    We are looking forward to get in contact with you to understand your situation and needs.
+                    We can help with configuration migration issues along with development of necessary tools.
+                </p>
+
+
+                <div class="margin-top50">
+
+                    <form novalidate name="simpleDemoForm" class="service-form">
+
+                        <h1>Contact Us</h1>
+
+                        <div class="row">
+                            <div class="form-group col-xs-12">
+                                <label class="sr-only" for="cname">Your name</label>
+                                <input type="text"
+                                       class="form-control"
+                                       id="cname"
+                                       ng-model="name"
+                                       placeholder="Name"
+                                       minlength="2"
+                                       required
+                                       aria-required="true">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-xs-12">
+                                <label class="sr-only" for="cemail">Email</label>
+                                <input type="email"
+                                       class="form-control"
+                                       id="cemail"
+                                       ng-model="email"
+                                       placeholder="Email"
+                                       required
+                                       aria-required="true">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-xs-12">
+                                <label class="sr-only" for="company">Company</label>
+                                <input type="text"
+                                       class="form-control"
+                                       id="company"
+                                       ng-model="company"
+                                       placeholder="Company name">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-xs-12">
+                                <label class="sr-only" for="cmessage">Your message</label>
+                                <textarea class="form-control"
+                                          id="cmessage"
+                                          ng-model="message"
+                                          placeholder="Enter your message"
+                                          rows="12"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-xs-12">
+                                <button ng-click="sendServiceRequest(name, email, company, message)"
+                                        ng-disabled="postingMessage || simpleDemoForm.$invalid"
+                                        class="btn btn-block btn-cta btn-primary">
+                                    <span ng-if="postingMessage">Sending...</span>
+                                    <span ng-if="!postingMessage">Send It</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <h3 ng-if="sent">
+                            Thank you.  We received your request and will get in touch ASAP.
+                        </h3>
+
+                    </form>
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+</section>
+
+

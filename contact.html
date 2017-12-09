@@ -1,0 +1,95 @@
+<div class="contact">
+
+    <div class="top-header-wrap">
+        <div ng-include='"/nav/nav.html"' id="top"></div>
+
+        <section class="features-page heading-section section section-on-bg">
+            <div class="container heading-content">
+                <h2 class="headline">Get in Touch</h2>
+            </div>
+        </section>
+    </div>
+
+    <div class="contact-methods">
+        <div class="container">
+            <div class="row">
+                <div class="item col-sm-6">
+                    <div class="item-inner">
+                        <h3 class="item-title"><i class="fa fa-life-ring" aria-hidden="true"></i> Get Support</h3>
+                        <div class="item-content">
+                            Have you tried finding the solution in our <a href="http://docs.confighub.com"
+                                                                          target="_docs">documentation</a>?<br>
+                            If not, ask via <a href="mailto:support@confighub.com">email</a>, or using the form below.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item col-sm-6">
+                    <div class="item-inner">
+                        <h3 class="item-title"><i class="fa fa-volume-control-phone" aria-hidden="true"></i> Want to
+                                                                                                             talk</h3>
+                        <div class="item-content">
+                            Set up a demo, and let's talk about how ConfigHub can help.<br>
+                            <a analytics-on="click" analytics-event="Contact" ui-sref="scheduleDemo">
+                                Schedule a web demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="form-block">
+        <form novalidate class="contact-form" name="simpleContactForm">
+            <h3 class="form-title text-center">We'll try to answer your request the same day</h3>
+            <div class="row">
+                <div class="form-group col-xs-12 col-sm-6">
+                    <label class="sr-only" for="cname">Name</label>
+                    <input type="text"
+                           class="form-control"
+                           id="cname"
+                           ng-model="name"
+                           placeholder="Name"
+                           minlength="2"
+                           required
+                           aria-required="true">
+                </div>
+                <div class="form-group col-xs-12 col-sm-6">
+                    <label class="sr-only" for="cemail">Email</label>
+                    <input type="email"
+                           class="form-control"
+                           id="cemail"
+                           ng-model="email"
+                           placeholder="Email"
+                           required
+                           aria-required="true">
+                </div>
+                <div class="form-group col-xs-12">
+                    <label class="sr-only" for="cmessage">Your message</label>
+                    <textarea class="form-control"
+                              id="cmessage"
+                              ng-model="message"
+                              placeholder="Enter your message"
+                              rows="12"></textarea>
+                </div>
+                <div class="form-group col-xs-12">
+                    <button ng-click="simpleContactPost(name, email, message)"
+                            ng-disabled="postingMessage || simpleContactForm.$invalid"
+                            class="btn btn-block btn-cta btn-primary">
+                        <span ng-if="postingMessage">Sending...</span>
+                        <span ng-if="!postingMessage">Send It</span>
+                    </button>
+                </div>
+
+                <h3 ng-if="messageSent">
+                    Thank you.  We received your message and will get in touch ASAP.
+                </h3>
+
+            </div>
+        </form>
+    </div>
+
+</div>

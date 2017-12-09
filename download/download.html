@@ -1,0 +1,214 @@
+<div class="downloads" ng-controller="DownloadCtrl">
+
+    <div class="top-header-wrap">
+        <div ng-include='"/nav/nav.html"' id="top"></div>
+
+        <section class="features-page heading-section section section-on-bg">
+            <div class="container heading-content">
+                <h2 class="headline">Download and Install</h2>
+                <h4>ConfigHub Platform, APIs and 3rd party modules</h4>
+            </div>
+        </section>
+    </div>
+
+
+    <section class="white-sub">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="platform-wrapper">
+                        <h2>ConfigHub Platform {{ platform.version }}</h2>
+
+                        <div>
+                            <span class="releaseDate">
+                                {{ platform.date }}
+                            |
+                            </span>
+                            <span class="releaseDate">
+                                <a href="https://github.com/ConfigHubPub/ConfigHubPlatform/releases/tag/{{ platform.version }}"
+                                   analytics-on="click" analytics-event="Release Note"
+                                   target="_docs">Release Notes</a> |
+
+                                <a analytics-on="click" analytics-event="Installation Instructions"
+                                   target="_docs"
+                                   href="http://docs.confighub.com/en/latest/pages/getting_started/install.html">
+                                    Installation Instructions
+                                </a>
+
+                            </span>
+                        </div>
+
+                        <div class="margin-top15 margin-bottom">
+                            <div>
+                                <a class="btn btn-danger btn-lg"
+                                   analytics-on="click" analytics-event="Platform Download"
+                                   href="{{ platform.url }}">
+                                        <ul class="list-inline stacked-btn-wrapper">
+                                            <li>
+                                            <div class="btn-top-text">
+                                                <strong>Download ConfigHub Platform</strong>
+                                            </div>
+                                            <div class="btn-bottom-text">{{ platform.name }}</div>
+                                            </li>
+                                        </ul>
+
+                                </a>
+                            </div>
+
+                            <div class="margin-top10">
+                                or,
+                                <a
+                                   analytics-on="click"
+                                   analytics-event="Docker Platform"
+                                   target="_docker"
+                                   href="https://hub.docker.com/r/confighub/confighubplatform/">
+                                    get a Docker container
+                                    <img src="images/community/docker-min.png" style="width: 22px; position: relative; top: -2px;">
+                                </a>
+
+                            </div>
+                        </div>
+
+                        <p class="eula margin-top">
+                            By downloading this you agree to the terms of
+                            <a ui-sref="eula">ConfigHub Software End User License Agreement (EULA)</a>
+                        </p>
+
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="gray-sub">
+        <div class="container">
+
+            <h2>APIs and 3rd party modules</h2>
+
+            <div class="row">
+                <div class="col-sm-12 col-md-7">
+
+                    <div class="release-item margin-bottom">
+                        <div class="contrib-logo">
+                            <img src="/images/community/confighub.png">
+                        </div>
+                        <div class="contrib-content">
+                            <h3>Java API</h3>
+                            <p>By: ConfigHub</p>
+                            <p>Source: <a target="_git" href="https://github.com/ConfigHubPub/JavaAPI">GitHub</a></p>
+                            <div class="description">
+                                Client API supporting configuration push/pull, and local file caching.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="release-item margin-bottom">
+                        <div class="contrib-logo">
+                            <img src="/images/community/confighub.png">
+                        </div>
+                        <div class="contrib-content">
+                            <h3>Python API</h3>
+                            <p>By: ConfigHub</p>
+                            <p>Source: <a target="_git" href="https://github.com/ConfigHubPub/JavaAPI">GitHub</a></p>
+                            <div class="description">
+                                Client API supporting configuration pull.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="release-item margin-bottom">
+                        <div class="contrib-logo">
+                            <img src="/images/community/vineti.png">
+                        </div>
+                        <div class="contrib-content">
+                            <h3>Ruby API</h3>
+                            <p>By: <a target="_third" href="http://www.vineti.com">Vineti.com</a></p>
+                            <p>Source: <a target="_git" href="https://github.com/vinetiworks/config_hub-client">GitHub</a></p>
+                            <div class="description">
+                                Client API supporting configuration pull.
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="release-item margin-bottom">
+                        <div class="contrib-logo">
+                            <img src="/images/community/belvedere.png">
+                        </div>
+                        <div class="contrib-content">
+                            <h3>Local Caching Proxy</h3>
+                            <p>By: <a target="_third" href="http://www.belvederetrading.com">Belvedere Trading</a></p>
+                            <p>Source: <span class="light">available Dec. 2017</span></p>
+                            <div class="description">
+                                Python daemon acting as a local caching proxy to a ConfigHub service.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-md-5">
+                    <div class="release-item">
+                        <h3 class="margin-bottom40">Submit open-source module/API</h3>
+
+                        <form novalidate class="contact-form" name="simpleContactForm">
+                            <div class="row">
+                                <div class="form-group col-xs-12">
+                                    <label class="sr-only" for="cname">Name</label>
+                                    <input type="text"
+                                           class="form-control"
+                                           id="cname"
+                                           ng-model="name"
+                                           placeholder="Name"
+                                           minlength="2"
+                                           required
+                                           aria-required="true">
+                                </div>
+                                <div class="form-group col-xs-12">
+                                    <label class="sr-only" for="cemail">Email</label>
+                                    <input type="email"
+                                           class="form-control"
+                                           id="cemail"
+                                           ng-model="email"
+                                           placeholder="Email"
+                                           required
+                                           aria-required="true">
+                                </div>
+                                <div class="form-group col-xs-12">
+                                    <label class="sr-only" for="cmessage">Your message</label>
+                                    <textarea class="form-control"
+                                              id="cmessage"
+                                              ng-model="message"
+                                              placeholder="Tell us about your work, and where we can find it."
+                                              rows="12"></textarea>
+                                </div>
+                                <div class="form-group col-xs-12">
+                                    <button ng-click="simpleContactPost(name, email, message)"
+                                            ng-disabled="postingMessage || simpleContactForm.$invalid"
+                                            class="btn btn-block btn-cta btn-primary">
+                                        <span ng-if="postingMessage">Sending...</span>
+                                        <span ng-if="!postingMessage">Send It</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row margin-bottom100"></div>
+        </div>
+    </section>
+
+
+
+
+</div>

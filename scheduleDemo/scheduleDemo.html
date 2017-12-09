@@ -1,0 +1,175 @@
+<div class="contact">
+    <div class="top-header-wrap">
+        <div ng-include='"/nav/nav.html"' id="top"></div>
+
+        <section class="features-page heading-section section section-on-bg">
+            <div class="container heading-content">
+                <h2 class="headline">Let's get together</h2>
+                <h4>
+                    and we'll show you what ConfigHub can do
+                </h4>
+            </div>
+        </section>
+    </div>
+
+    <div class="container" ng-controller="DemoController">
+        <section class="section">
+        <form novalidate name="simpleDemoForm" class="demo-form">
+
+            <div class="row">
+                <div class="col-md-7 col-lg-6">
+
+                    <h4>Tell us a bit about yourself</h4>
+
+                    <div class="row">
+                        <div class="form-group col-xs-12">
+                            <label class="sr-only" for="cname">Your name</label>
+                            <input type="text"
+                                   class="form-control"
+                                   id="cname"
+                                   ng-model="name"
+                                   placeholder="Name"
+                                   minlength="2"
+                                   required
+                                   aria-required="true">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-xs-12">
+                            <label class="sr-only" for="cemail">Email</label>
+                            <input type="email"
+                                   class="form-control"
+                                   id="cemail"
+                                   ng-model="email"
+                                   placeholder="Email"
+                                   required
+                                   aria-required="true">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-xs-12">
+                            <label class="sr-only" for="company">Company</label>
+                            <input type="text"
+                                   class="form-control"
+                                   id="company"
+                                   ng-model="company"
+                                   placeholder="Company name">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class=" col-xs-6 col-sm-4">
+                            <label class="sr-only" for="city">City</label>
+                            <input type="text"
+                                   class="form-control"
+                                   id="city"
+                                   ng-model="city"
+                                   placeholder="City">
+                        </div>
+                        <div class=" col-xs-6 col-sm-4">
+                            <label class="sr-only" for="state">State</label>
+                            <input type="text"
+                                   class="form-control"
+                                   id="state"
+                                   ng-model="state"
+                                   placeholder="State">
+                        </div>
+                        <div class="col-xs-6 col-sm-4">
+                            <label class="sr-only" for="country">Country</label>
+                            <input type="text"
+                                   class="form-control"
+                                   id="country"
+                                   ng-model="country"
+                                   placeholder="Country">
+                        </div>
+                    </div>
+
+                    <hr class="margin-top30 margin-bottom30"/>
+
+                    <h4>Choose date and time that works best for you.</h4>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <div>
+
+                                <input type="date"
+                                       class="form-control"
+                                       ng-model="demoDate"
+                                       placeholder="yyyy-MM-dd"
+                                       required />
+                            </div>
+                        </div>
+
+                        <div class="col-xs-6">
+                            <div>
+
+                                <input type="time"
+                                       class="form-control"
+                                       name="input"
+                                       ng-model="demoTime"
+                                       placeholder="HH:mm a"
+                                       required />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timezone">
+                        Timezone: {{ demoTime | date : 'Z'}} GMT
+                    </div>
+
+                    <hr class="margin-top30 margin-bottom30"/>
+
+                    <div class="row">
+                        <div class="form-group col-xs-12">
+                            <label class="sr-only" for="cmessage">Your message</label>
+                            <textarea class="form-control"
+                                      id="cmessage"
+                                      ng-model="message"
+                                      placeholder="Enter your message"
+                                      rows="5"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-xs-12">
+                            <button ng-click="simpleDemoPost(name, email, company, city, state, country, demoDate, demoTime, message)"
+                                    ng-disabled="postingMessage || simpleDemoForm.$invalid"
+                                    class="btn btn-block btn-cta btn-primary">
+                                <span ng-if="postingMessage">Sending...</span>
+                                <span ng-if="!postingMessage">Send It</span>
+                            </button>
+                        </div>
+                    </div>
+                    <h3 ng-if="sent">
+                        Thank you for the request.  We will get back you ASAP.
+                    </h3>
+                </div>
+
+                <div class="col-md-4 col-md-offset-1 col-lg-offset-2">
+
+                    <div class="margin-bottom50">
+                        <h1>It's not a sales pitch</h1>
+
+                        <p>
+                            We think ConfigHub platform is the bee's knees, but we can
+                            appreciate the fact that it does present a paradigm shift which can be difficult
+                            to digest.  So, we're happy to walk you through it.
+                        </p>
+
+                    </div>
+
+                    <div>
+                        <h1>Questions?</h1>
+
+                        <p>
+                            Looking for more information? <a href="mailto: support@confighub.com">support@confighub.com</a>.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+        </form>
+        </section>
+    </div>
+</div>
