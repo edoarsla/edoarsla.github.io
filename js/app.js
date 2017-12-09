@@ -12,23 +12,23 @@ angular
     .config(['$locationProvider', '$urlRouterProvider', '$stateProvider', '$httpProvider',
         function($locationProvider, $urlRouterProvider, $stateProvider, $httpProvider)
         {
-//             $urlRouterProvider
-//                 .when('/services/', '/services')
-//                 .when('/license/', '/license')
-//                 .when('/features/', '/features')
-//                 .when('/download/', '/download')
-//                 .when('/contact/', '/contact')
-//                 .when('/scheduleDemo/', '/scheduleDemo')
+            $urlRouterProvider
+                .when('/services/', '/services')
+                .when('/license/', '/license')
+                .when('/features/', '/features')
+                .when('/download/', '/download')
+                .when('/contact/', '/contact')
+                .when('/scheduleDemo/', '/scheduleDemo')
 
-//                 .when('/terms/', '/terms')
-//                 .when('/eula/', '/eula')
-//                 .when('/404/', '/404')
-//                 .when('/500/', '/500')
-//                 .otherwise(function($injector, $location) {
-//                     var state = $injector.get('$state');
-//                     state.go('404', {notify: false});
-//                     return $location.path();
-//                 });
+                .when('/terms/', '/terms')
+                .when('/eula/', '/eula')
+                .when('/404/', '/404')
+                .when('/500/', '/500')
+                .otherwise(function($injector, $location) {
+                    var state = $injector.get('$state');
+                    state.go('404', {notify: false});
+                    return $location.path();
+                });
 
             $stateProvider
 
