@@ -43,7 +43,8 @@
     </div>
 
     <div class="form-block">
-        <form novalidate class="contact-form" name="simpleContactForm" method="POST" action="https://formspree.io/support@confighub.com">
+        <form novalidate class="contact-form" name="simpleContactForm" method="POST"
+              action="https://formspree.io/support@confighub.com">
             <h3 class="form-title text-center">We'll try to answer your request the same day</h3>
             <div class="row">
                 <div class="form-group col-xs-12 col-sm-6">
@@ -78,6 +79,7 @@
                               placeholder="Enter your message"
                               rows="12"></textarea>
                 </div>
+                <input type="hidden" name="_next" value="/contact" />
                 <div class="form-group col-xs-12">
                     <button type="submit"
                             ng-disabled="postingMessage || simpleContactForm.$invalid"
@@ -88,7 +90,7 @@
                 </div>
 
                 <h3 ng-if="messageSent">
-                    Thank you.  We received your message and will get in touch ASAP.
+                    Thank you. We received your message and will get in touch ASAP.
                 </h3>
 
             </div>
