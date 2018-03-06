@@ -3,21 +3,52 @@
 
 <head>
   <meta charset="utf-8" />
-
-  <title>SGHPA Demo</title>
-
-  <script>
+    
+    <script>
     sessionStorage.redirect = location.href;
-  </script>
+    </script>
 
-  <meta http-equiv="refresh" content="0;URL='/sghpa'"></meta>
-</head>
+  <meta http-equiv="refresh" content="0;URL='/'"></meta>
+  </head>
+    <body>
+    
+<div class="top-header-wrap" style="overflow: visible">
+    <div ng-include='"/nav/nav.html"' id="top"></div>
+</div>
 
-<body>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</body>
+<div class="container">
 
+    <style>
+        .fof {
+            text-align: center;
+            font-size: 300px;
+            color: #cdcdcd;
+            font-weight: 700;
+        }
+        .foft {
+            text-align: center;
+            font-size: 34px;
+        }
+        .info2 {
+            margin-top: 50px;
+            text-align: center;
+        }
+        .info2 a, .info2 a:visited, .info2 a:hover {
+            color: #666;
+            text-underline: none;
+            font-size: 18px;
+        }
+    </style>
 
-</html>
+    <div class="fof">
+        404
+    </div>
+    <div class="foft">
+        Yeah... I'm gonna need you to go ahead and find another page.
+    </div>
+
+</div>
+
+    </body>
+    
+    </html>
