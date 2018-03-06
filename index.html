@@ -37,7 +37,23 @@
     <link href="/css/bootstrap-additions.min.css"  rel="stylesheet">
 </head>
 
+<style type="text/css">
+    body:before {
+      content: attr(message);
+    }
+</style>
+    
 <body ng-controller="AppCtrl">
+    
+      <script>
+    (function(){
+      var redirect = sessionStorage.redirect;
+      delete sessionStorage.redirect;
+      if (redirect && redirect != location.href) {
+        history.replaceState(null, null, redirect);      }
+    })();
+  </script>
+    
     <div class="body-wrap">
         <div ui-view class="index-padded-top" autoscroll="true"></div>
         <div ng-include='"/nav/backToTop.html"'></div>
